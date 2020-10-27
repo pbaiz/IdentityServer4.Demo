@@ -92,17 +92,17 @@ namespace IdentityServer4Demo
             services.AddTransient<ICorsPolicyService, DemoCorsPolicy>();
 
             // Added by PBV
-            services.AddDbContext<ApplicationDbContext>(config =>
-            {
-                config.UseInMemoryDatabase("InMemoryDB");
-            });
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
-            services.ConfigureApplicationCookie(config =>
-            {
-                config.Cookie.Name = "InMemoryDB";                
-            }); 
+            //services.AddDbContext<ApplicationDbContext>(config =>
+            //{
+            //    config.UseInMemoryDatabase("InMemoryDB");
+            //});
+            //services.AddIdentity<ApplicationUser, IdentityRole>()
+            //    .AddEntityFrameworkStores<ApplicationDbContext>()
+            //    .AddDefaultTokenProviders();
+            //services.ConfigureApplicationCookie(config =>
+            //{
+            //    config.Cookie.Name = "InMemoryDB";                
+            //}); 
         }
 
         public void Configure(IApplicationBuilder app)
